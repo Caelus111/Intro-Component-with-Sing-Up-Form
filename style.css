@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-color: hsl(0, 100%, 74%);
+  --btn-background-color: #38cc8c;
+  --error-color: hsl(0, 100%, 74%);
+  --text-bg-color: hsl(248, 32%, 49%);
+  --input-focus-color: hsl(249, 10%, 26%);
+  --input-color: hsla(246, 25%, 77%, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-color) url(images/bg-intro-mobile.png) center center/
+    cover no-repeat;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: clamp(0.95rem, 0.78rem + 0.27vw, 1rem);
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  align-items: start;
+}
+
+.container {
+  width: min(90%, 75rem);
+  text-align: center;
+  margin: 1rem auto;
+  gap: 1rem;
+}
+
+.text-side {
+  color: white;
+}
+
+.text-side h1 {
+  font-size: clamp(1.62rem, 1.28rem + 1.71vw, 3.1rem);
+  margin: 5rem auto 1rem;
+  width: 80%;
+}
+
+.text-side p {
+  width: min(100%, 90%);
+  margin: auto;
+  line-height: 1.7;
+}
+
+.sign-up-side .purple-free-trial {
+  width: 100%;
+  padding: 1rem;
+  margin: 2rem auto ;
+  color: white;
+  background: var(--text-bg-color);
+  border-radius: 10px;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
+}
+
+.sign-up-side .purple-free-trial p {
+  width: min(100%, 50%);
+  margin: auto;
+}
+
+.sign-up-side .purple-free-trial p span {
+  font-weight: bold;
+}
+
+.sign-up-form {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
+  gap: 1rem;
+}
+
+.sign-up-form input {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  font-weight: bold;
+  border: 1px solid var(--input-color);
+  color: var(--input-focus-color);
+  border-radius: 5px;
+  padding: 1rem 1rem 1rem 2rem;
+  transition: 100ms ease-in;
+}
+
+.input input::content {
+  color: var(--input-focus-color);
+}
+
+.sign-up-form input:focus {
+  border: 1.1px solid var(--input-focus-color);
+  outline: none;
+}
+
+.sign-up-form input::placeholder {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sign-up-form .btn {
+  color: white;
+  background: var(--btn-background-color);
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+  box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
+}
+
+.sign-up-form .btn:hover {
+  opacity: 0.8;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.sign-up-form .sign-up-footer p {
+  font-size: 0.8rem;
+  color: var(--input-color);
+}
+
+.sign-up-form .sign-up-footer span {
+  color: var(--error-color);
+  font-weight: bold;
+}
+
+/* Utility classes */
+.error {
+  border: 2px solid var(--error-color) !important;
+  background: url(images/icon-error.svg) top 50% right 5% no-repeat;
+}
+
+.error-text {
+  font-size: 0.75rem;
+  text-align: right;
+  color: var(--error-color);
+  font-style: italic;
+}
+
+.not-shown {
+  display: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Media Queries */
+@media (width >800px) {
+  body {
+    background: var(--bg-color) url(images/bg-intro-desktop.png) center center/
+      cover no-repeat;
+  }
+
+  main {
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* text side */
+  .container {
+    text-align: center;
+    margin: auto;
+    gap: 1rem;
+  }
+  .text-side {
+    color: white;
+    padding: 1rem;
+    flex: 1;
+  }
+
+  .text-side h1 {
+    text-align: left;
+    margin: 0 0 1.5rem 0;
+    /* width:100%; */
+    line-height: 1.1;
+  }
+  .text-side p {
+    width: auto;
+    margin: 0;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  /* Sign up form side */
+  .sign-up-side {
+    flex: 1.1;
+  }
+
+  .sign-up-side .purple-free-trial {
+    width: 100%;
+    padding: 1rem;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .sign-up-side .purple-free-trial p {
+    width: auto;
+  }
+
+  .sign-up-form {
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    gap: 1.3rem;
+  }
+
+  .sign-up-form input::placeholder {
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .sign-up-form .btn {
+    padding: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  .sign-up-form .sign-up-footer p {
+    font-size: 0.7rem;
+    color: var(--input-color);
+  }
+
+  .sign-up-form .sign-up-footer span {
+    color: var(--error-color);
+    font-weight: bold;
+  }
+
+  /* Utility classes */
+  .flex {
+    flex-direction: row;
+    align-items: center;
+  }
+}
